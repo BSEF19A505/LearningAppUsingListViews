@@ -13,7 +13,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    SeekBar seek;
+    ListView listView;
+    TextView textView;
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -21,7 +23,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        listView=findViewById(R.id.ListView);
 
+        seek=findViewById(R.id.seekBar);
+
+        seek.setMax(20);
+        seek.setMin(1);
     }
 
 }
