@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-
+                table(i);
 
             }
 
@@ -50,5 +50,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    public void table(int num){
+        textView=findViewById(R.id.textView7);
+        ArrayList<String> rows=new ArrayList<>();
+        for(int i=1;i<=10;i++){
+            rows.add(num+" x "+i+" = "+(num*i));
+        }
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,rows);
+        listView.setAdapter(adapter);
+        textView.setText("Table of "+num);
+    }
 }
